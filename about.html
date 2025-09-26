@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>About — Developer Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <header class="site-header">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="Logo" class="logo"/>
+        <div class="brand-text">
+          <div class="name">Your Name</div>
+          <div class="role">Full-stack Developer</div>
+        </div>
+      </div>
+      <nav aria-label="Main">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="projects.html" class="nav-link">Work</a>
+        <a href="contact.html" class="nav-link cta">Contact</a>
+      </nav>
+    </header>
+
+    <main class="flow">
+      <section class="hero">
+        <div class="hero-inner">
+          <h1 class="headline">About</h1>
+          <p class="lead">A blend of pragmatic engineering and thoughtful product thinking. I enjoy designing systems that scale and teams that thrive.</p>
+          <p class="muted">I mentor junior engineers and care a lot about code quality, observability, and clear APIs.</p>
+        </div>
+        <figure class="hero-art"><img src="assets/avatar.svg" alt="Avatar placeholder"/></figure>
+      </section>
+
+      <section class="flow-card">
+        <h2 class="card-title">Background</h2>
+        <p>Years of experience across web, backend services, and infrastructure. Comfortable designing from prototype to production.</p>
+      </section>
+
+      <footer class="site-footer">
+        <div>© <span id="year"></span> Your Name — About</div>
+        <div class="foot-links"><a href="resume.html">Resume</a></div>
+      </footer>
+    </main>
+
+    <script src="js/scripts.js" defer></script>
+  </body>
+</html>

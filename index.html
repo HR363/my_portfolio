@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Developer Portfolio — Placeholder</title>
+    <meta name="description" content="A dark-themed developer portfolio with subtle animated background and a flowing layout." />
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="Logo" class="logo"/>
+        <div class="brand-text">
+          <div class="name">Your Name</div>
+          <div class="role">Full-stack Developer</div>
+        </div>
+      </div>
+      <nav aria-label="Main">
+        <a href="projects.html" class="nav-link">Work</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link cta">Contact</a>
+      </nav>
+    </header>
+
+    <main class="flow">
+      <section class="hero" id="hero">
+        <div class="hero-inner">
+          <h1 class="headline">Crafting elegant code and robust systems.</h1>
+          <p class="lead">I design and build web experiences with performance, accessibility, and maintainability in mind. I like clean abstractions and readable code.</p>
+
+          <div class="meta-row">
+            <div class="location">Based in: Somewhere</div>
+            <div class="tools">Favorite stack: <code>TypeScript</code> • <code>Node</code> • <code>React</code></div>
+          </div>
+        </div>
+
+        <figure class="hero-art">
+          <img src="assets/avatar.svg" alt="Avatar placeholder" />
+        </figure>
+      </section>
+
+      <section class="flow-card" id="about">
+        <h2 class="card-title">About — A concise story</h2>
+        <p>I build dependable systems and delightful developer experiences. My work focuses on clean APIs, predictable state, and scalable architecture. I pay attention to developer ergonomics and product details.</p>
+        <p class="muted">I contribute to open-source, love code reviews, and enjoy mentoring.</p>
+      </section>
+
+      <section class="flow-card" id="skills">
+        <h2 class="card-title">Skills</h2>
+        <div class="skill-belt" aria-label="Skills carousel" tabindex="0">
+          <div class="belt-track">
+            <span class="skill">JavaScript</span>
+            <span class="skill">TypeScript</span>
+            <span class="skill">Node.js</span>
+            <span class="skill">React</span>
+            <span class="skill">GraphQL</span>
+            <span class="skill">SQL &amp; NoSQL</span>
+            <span class="skill">Testing</span>
+            <span class="skill">CI / CD</span>
+            <span class="skill">Docker</span>
+            <span class="skill">Kubernetes</span>
+            <span class="skill">Observability</span>
+            <span class="skill">Security</span>
+          </div>
+          <!-- duplicate track for seamless loop -->
+          <div class="belt-track" aria-hidden="true">
+            <span class="skill">JavaScript</span>
+            <span class="skill">TypeScript</span>
+            <span class="skill">Node.js</span>
+            <span class="skill">React</span>
+            <span class="skill">GraphQL</span>
+            <span class="skill">SQL &amp; NoSQL</span>
+            <span class="skill">Testing</span>
+            <span class="skill">CI / CD</span>
+            <span class="skill">Docker</span>
+            <span class="skill">Kubernetes</span>
+            <span class="skill">Observability</span>
+            <span class="skill">Security</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="flow-card" id="projects">
+        <h2 class="card-title">Selected Work</h2>
+        <div class="projects">
+          <article class="project" tabindex="0">
+            <img src="assets/project-1.svg" alt="Project placeholder" />
+            <div class="project-body">
+              <h3 class="project-title">Project One</h3>
+              <p class="project-desc">An example of a performant web app with a strong focus on DX and scalable architecture.</p>
+              <div class="project-tags"><code>React</code> <code>Node</code> <code>Postgres</code></div>
+            </div>
+          </article>
+
+          <article class="project" tabindex="0">
+            <img src="assets/project-1.svg" alt="Project placeholder" />
+            <div class="project-body">
+              <h3 class="project-title">Project Two</h3>
+              <p class="project-desc">A distributed service with resilience patterns and observability built-in.</p>
+              <div class="project-tags"><code>Go</code> <code>gRPC</code> <code>Prometheus</code></div>
+            </div>
+          </article>
+
+          <article class="project" tabindex="0">
+            <img src="assets/project-1.svg" alt="Project placeholder" />
+            <div class="project-body">
+              <h3 class="project-title">Project Three</h3>
+              <p class="project-desc">A developer tooling product focused on ergonomics and reliability.</p>
+              <div class="project-tags"><code>TypeScript</code> <code>Electron</code></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="flow-card" id="contact">
+        <h2 class="card-title">Contact</h2>
+        <p>Interested in working together? Reach out — I respond within a few business days.</p>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Replace with your contact endpoint');">
+          <input type="text" placeholder="Your name" aria-label="Your name" required>
+          <input type="email" placeholder="you@domain.com" aria-label="Your email" required>
+          <textarea placeholder="Brief message" aria-label="Message" rows="4"></textarea>
+          <button class="btn" type="submit">Send</button>
+        </form>
+      </section>
+
+      <footer class="site-footer">
+        <div>© <span id="year"></span> Your Name — crafted with care.</div>
+        <div class="foot-links">View source • Resume • Email</div>
+      </footer>
+    </main>
+
+    <script src="js/scripts.js" defer></script>
+  </body>
+</html>

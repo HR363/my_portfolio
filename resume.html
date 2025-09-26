@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Resume — Developer Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+      /* Make resume more print-friendly */
+      @media print{ body{background:#fff;color:#000} .site-header,.site-footer,#bg-canvas{display:none} .flow{max-width:800px} }
+    </style>
+  </head>
+  <body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <header class="site-header">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="Logo" class="logo"/>
+        <div class="brand-text">
+          <div class="name">Your Name</div>
+          <div class="role">Full-stack Developer</div>
+        </div>
+      </div>
+      <nav aria-label="Main">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="projects.html" class="nav-link">Work</a>
+        <a href="contact.html" class="nav-link cta">Contact</a>
+      </nav>
+    </header>
+
+    <main class="flow">
+      <section class="flow-card">
+        <h1 class="card-title">Your Name</h1>
+        <p class="muted">Full-stack Developer — brief headline about your experience and specializations.</p>
+
+        <h2>Experience</h2>
+        <div>
+          <strong>Senior Engineer — Example Co</strong>
+          <div class="muted">2021 — Present</div>
+          <p>Shipping robust services and helping teams scale.</p>
+        </div>
+
+        <h2>Education</h2>
+        <div><strong>Computer Science</strong> — University</div>
+      </section>
+
+      <footer class="site-footer">
+        <div>© <span id="year"></span> Your Name — Resume</div>
+        <div class="foot-links"><a href="index.html">Home</a></div>
+      </footer>
+    </main>
+
+    <script src="js/scripts.js" defer></script>
+  </body>
+</html>
