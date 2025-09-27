@@ -104,6 +104,51 @@
   if(yearEl) yearEl.textContent = new Date().getFullYear();
 })();
 
+// Navbar scroll effect
+(() => {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+  
+  let lastScrollY = window.scrollY;
+  
+  function updateHeader() {
+    const currentScrollY = window.scrollY;
+    
+    if (currentScrollY > 100) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    
+    lastScrollY = currentScrollY;
+  }
+  
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader(); // Initial call
+})();
+
+// Mobile menu toggle
+(() => {
+  const mobileToggle = document.querySelector('.mobile-menu-toggle');
+  const nav = document.querySelector('nav');
+  
+  if (!mobileToggle || !nav) return;
+  
+  mobileToggle.addEventListener('click', () => {
+    mobileToggle.classList.toggle('active');
+    nav.classList.toggle('mobile-open');
+  });
+  
+  // Close mobile menu when clicking on a link
+  const navLinks = nav.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileToggle.classList.remove('active');
+      nav.classList.remove('mobile-open');
+    });
+  });
+})();
+
 // Skill belt carousel initializer
 (() => {
   function initBelt(){
@@ -125,6 +170,27 @@
       // set track width to combined width (two copies)
       t.style.width = (originalWidth * 2) + 'px';
     });
+
+    // Remove tracks from document flow by absolutely positioning them inside the belt container.
+    // This prevents their large combined width from expanding ancestor layout and causing page overflow.
+    const firstTrackHeight = tracks[0] ? tracks[0].offsetHeight : 0;
+    if(tracks.length > 0){
+      const totalHeight = firstTrackHeight * tracks.length;
+      belt.style.height = totalHeight + 'px';
+      tracks.forEach((t, i) => {
+        t.style.position = 'absolute';
+        t.style.left = '0';
+        t.style.top = (i * firstTrackHeight) + 'px';
+        t.style.margin = '0';
+        // initial offset for second track (will be animated)
+        if(i === 1){
+          const animDist = t.style.getPropertyValue('--anim-distance') || '50%';
+          t.style.transform = `translateX(calc(${animDist} * -1))`;
+        } else {
+          t.style.transform = 'translateX(0)';
+        }
+      });
+    }
 
     // start playing unless reduced motion
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
