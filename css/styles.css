@@ -713,8 +713,8 @@ nav{
 .contact-form{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-top: 30px;
+  gap: 30px; /* Increased gap between form fields */
+  margin-top: 50px; /* Increased margin from text */
   max-width: 800px;
 }
 
@@ -827,12 +827,14 @@ nav{
   .flow{
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto auto;
+    gap: 50px; /* Maintain larger gap on tablet */
   }
   
   .hero{
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
-    padding: 60px 40px 80px;
+    padding: 80px 50px 100px; /* Maintain good spacing on tablet */
+    gap: 50px;
   }
   
   .hero-inner{
@@ -845,7 +847,7 @@ nav{
   .hero-art{
     grid-column: 1;
     grid-row: 2;
-    margin-top: 40px;
+    margin-top: 50px; /* Increased margin */
   }
   
   #about,
@@ -853,8 +855,9 @@ nav{
   #projects,
   #contact{
     grid-column: 1;
-    margin: 20px;
+    margin: 30px; /* Increased margin for better separation */
     border-radius: 20px;
+    padding: 60px 40px; /* Maintain good padding */
   }
   
   #about::before,
@@ -865,6 +868,7 @@ nav{
   .projects{
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
+    gap: 30px; /* Maintain gap between projects */
   }
   
   .project:nth-child(2){
@@ -877,6 +881,7 @@ nav{
     display: flex;
     flex-direction: column;
     text-align: center;
+    gap: 30px; /* Maintain gap between image and content */
   }
   
   .project:nth-child(3) img{
@@ -887,8 +892,14 @@ nav{
 }
 
 @media (max-width: 768px){
+  .flow{
+    gap: 40px; /* Maintain gap on mobile */
+    padding-top: 90px; /* Account for mobile header */
+  }
+  
   .hero{
-    padding: 40px 20px 60px;
+    padding: 60px 30px 80px; /* Better spacing on mobile */
+    gap: 40px;
   }
   
   .headline{
@@ -914,8 +925,8 @@ nav{
   #skills,
   #projects,
   #contact{
-    padding: 40px 20px;
-    margin: 10px;
+    padding: 50px 30px; /* Better padding on mobile */
+    margin: 20px; /* Better margin on mobile */
   }
   
   .card-title{
@@ -924,7 +935,7 @@ nav{
   
   .contact-form{
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 20px; /* Maintain gap on mobile */
   }
   
   .contact-form input,
@@ -932,11 +943,19 @@ nav{
     grid-column: 1;
   }
   
+  .projects{
+    gap: 25px; /* Maintain gap between projects on mobile */
+  }
+  
+  .project{
+    padding: 30px; /* Appropriate padding for mobile */
+  }
+  
   .site-footer{
     flex-direction: column;
-    gap: 16px;
+    gap: 20px; /* Better gap on mobile */
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px; /* Better padding on mobile */
   }
 }
 
