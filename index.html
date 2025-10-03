@@ -21,6 +21,19 @@
       <nav aria-label="Main">
         <a href="projects.html" class="nav-link">Work</a>
         <a href="about.html" class="nav-link">About</a>
+        <button class="nav-link game-icon" id="game-toggle" aria-label="Open Rubik's Cube Game">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="6" height="6" rx="1"/>
+            <rect x="9" y="3" width="6" height="6" rx="1"/>
+            <rect x="15" y="3" width="6" height="6" rx="1"/>
+            <rect x="3" y="9" width="6" height="6" rx="1"/>
+            <rect x="9" y="9" width="6" height="6" rx="1"/>
+            <rect x="15" y="9" width="6" height="6" rx="1"/>
+            <rect x="3" y="15" width="6" height="6" rx="1"/>
+            <rect x="9" y="15" width="6" height="6" rx="1"/>
+            <rect x="15" y="15" width="6" height="6" rx="1"/>
+          </svg>
+        </button>
         <a href="contact.html" class="nav-link cta">Contact</a>
       </nav>
       
@@ -138,7 +151,57 @@
       </footer>
     </main>
 
+    <!-- Rubik's Cube Game Modal -->
+    <div id="game-modal" class="game-modal">
+      <div class="game-modal-content">
+        <div class="game-header">
+          <h2>Rubik's Cube</h2>
+          <button class="game-close" id="game-close" aria-label="Close game">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="game-container">
+          <div id="game-canvas-container">
+            <canvas id="rubik-canvas"></canvas>
+          </div>
+          
+          <div class="game-controls">
+            <div class="control-group">
+              <h3>Controls</h3>
+              <div class="control-buttons">
+                <button class="control-btn" data-face="front">Front</button>
+                <button class="control-btn" data-face="back">Back</button>
+                <button class="control-btn" data-face="left">Left</button>
+                <button class="control-btn" data-face="right">Right</button>
+                <button class="control-btn" data-face="top">Top</button>
+                <button class="control-btn" data-face="bottom">Bottom</button>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <h3>Actions</h3>
+              <div class="action-buttons">
+                <button class="action-btn" id="shuffle-btn">Shuffle</button>
+                <button class="action-btn" id="solve-btn">Solve</button>
+                <button class="action-btn" id="reset-btn">Reset</button>
+              </div>
+            </div>
+            
+            <div class="game-info">
+              <p>Click and drag to rotate the cube</p>
+              <p>Click face buttons to rotate individual faces</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="js/scripts.js" defer></script>
+    <script src="js/rubik-cube.js" defer></script>
   </body>
 </html>
