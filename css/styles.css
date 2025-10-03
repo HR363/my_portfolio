@@ -287,10 +287,7 @@ nav{
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   padding: 120px 60px;
-  background: linear-gradient(135deg, 
-    rgba(255,255,255,0.03) 0%, 
-    rgba(110,231,183,0.05) 50%, 
-    rgba(255,255,255,0.02) 100%);
+  background: transparent;
   border-radius: 24px;
   position: relative;
   overflow: hidden;
@@ -408,9 +405,9 @@ nav{
 /* About section - standalone with clear separation */
 #about{
   padding: 80px 60px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(110,231,183,0.02));
+  background: transparent;
   border-radius: 24px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: none;
   position: relative;
   margin: 40px 0;
 }
@@ -428,9 +425,9 @@ nav{
 /* Skills section - standalone with clear separation */
 #skills{
   padding: 80px 60px;
-  background: linear-gradient(135deg, rgba(110,231,183,0.03), rgba(255,255,255,0.02));
+  background: transparent;
   border-radius: 24px;
-  border: 1px solid rgba(110,231,183,0.15);
+  border: none;
   position: relative;
   margin: 40px 0;
 }
@@ -450,9 +447,9 @@ nav{
 /* Projects section - standalone with clear separation */
 #projects{
   padding: 80px 60px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(110,231,183,0.02));
+  background: transparent;
   border-radius: 24px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: none;
   position: relative;
   margin: 40px 0;
 }
@@ -471,12 +468,9 @@ nav{
 /* Contact section - standalone with clear separation */
 #contact{
   padding: 80px 60px;
-  background: linear-gradient(135deg, 
-    rgba(110,231,183,0.04) 0%, 
-    rgba(255,255,255,0.02) 50%, 
-    rgba(110,231,183,0.04) 100%);
+  background: transparent;
   border-radius: 24px;
-  border: 1px solid rgba(110,231,183,0.15);
+  border: none;
   position: relative;
   margin: 40px 0;
 }
@@ -562,10 +556,9 @@ nav{
 
 .projects{
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 30px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
 }
 
 .project{
@@ -573,8 +566,8 @@ nav{
   flex-direction: column;
   padding: 30px;
   border-radius: 20px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(110,231,183,0.01));
-  border: 1px solid rgba(255,255,255,0.05);
+  background: transparent;
+  border: none;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -596,7 +589,6 @@ nav{
 .project:hover{
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-  border-color: rgba(110,231,183,0.2);
 }
 
 .project:focus::before,
@@ -604,25 +596,7 @@ nav{
   transform: scaleX(1);
 }
 
-.project:nth-child(1){
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.project:nth-child(2){
-  grid-column: 2;
-  grid-row: 1;
-  margin-top: 40px;
-}
-
-.project:nth-child(3){
-  grid-column: 1 / 3;
-  grid-row: 2;
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 30px;
-  align-items: center;
-}
+/* Remove special styling for 3rd project since we now have 6 projects */
 
 .project img{
   width: 60px;
@@ -635,12 +609,7 @@ nav{
   flex-shrink: 0;
 }
 
-.project:nth-child(3) img{
-  width: 120px;
-  height: 120px;
-  border-radius: 20px;
-  padding: 20px;
-}
+/* Removed special styling for 3rd project image */
 
 .project:hover img{
   transform: rotate(5deg) scale(1.1);
@@ -653,9 +622,7 @@ nav{
   gap: 12px;
 }
 
-.project:nth-child(3) .project-body{
-  gap: 16px;
-}
+/* Removed special styling for 3rd project body */
 
 .project-title{
   margin: 0;
@@ -665,9 +632,7 @@ nav{
   letter-spacing: -0.01em;
 }
 
-.project:nth-child(3) .project-title{
-  font-size: 24px;
-}
+/* Removed special styling for 3rd project title */
 
 .project-desc{
   margin: 0;
@@ -676,9 +641,7 @@ nav{
   font-size: 14px;
 }
 
-.project:nth-child(3) .project-desc{
-  font-size: 16px;
-}
+/* Removed special styling for 3rd project description */
 
 .project-tags{
   display: flex;
@@ -778,6 +741,155 @@ nav{
   box-shadow: 0 8px 25px rgba(110,231,183,0.4);
 }
 
+/* Experience Timeline Styles */
+.experience-timeline{
+  margin-top: 40px;
+}
+
+.experience-item{
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  position: relative;
+}
+
+.experience-item:last-child{
+  border-bottom: none;
+}
+
+.experience-item::before{
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 50px;
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  border: 3px solid var(--bg);
+}
+
+.experience-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.experience-title{
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.experience-meta{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.company{
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.duration{
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.experience-desc{
+  margin: 0 0 20px 0;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.experience-tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.experience-tags code{
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent);
+  background: rgba(110,231,183,0.1);
+  border: 1px solid rgba(110,231,183,0.2);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Testimonials Grid Styles */
+.testimonials-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.testimonial{
+  padding: 30px;
+  background: transparent;
+  border: none;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.testimonial:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.testimonial::before{
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 60px;
+  color: var(--accent);
+  opacity: 0.3;
+  font-family: serif;
+}
+
+.testimonial-content{
+  margin-bottom: 20px;
+}
+
+.testimonial-content p{
+  margin: 0;
+  font-style: italic;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.testimonial-author{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.author-info h4{
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.author-info span{
+  font-size: 12px;
+  color: var(--muted);
+}
+
 .site-footer{
   display: flex;
   justify-content: space-between;
@@ -819,70 +931,60 @@ nav{
 
 @media (max-width: 1200px){
   .flow{
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto;
+    gap: 80px;
   }
   
   .hero{
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    padding: 60px 40px 80px;
+    gap: 60px;
+    padding: 100px 50px;
+    text-align: center;
   }
   
   .hero-inner{
     grid-column: 1;
-    grid-row: 1;
-    padding-right: 0;
-    text-align: center;
   }
   
   .hero-art{
     grid-column: 1;
-    grid-row: 2;
-    margin-top: 40px;
   }
   
   #about,
   #skills,
   #projects,
   #contact{
-    grid-column: 1;
     margin: 20px;
-    border-radius: 20px;
-  }
-  
-  #about::before,
-  #projects::before{
-    display: none;
+    padding: 60px 40px;
   }
   
   .projects{
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
+    gap: 30px;
   }
   
-  .project:nth-child(2){
-    margin-top: 0;
+  .testimonials-grid{
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
   
-  .project:nth-child(3){
-    grid-column: 1;
-    grid-row: 3;
-    display: flex;
+  .experience-header{
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
   }
   
-  .project:nth-child(3) img{
-    width: 80px;
-    height: 80px;
-    margin: 0 auto;
+  .experience-meta{
+    align-items: flex-start;
   }
 }
 
 @media (max-width: 768px){
+  .flow{
+    gap: 60px;
+  }
+  
   .hero{
-    padding: 40px 20px 60px;
+    padding: 80px 30px;
+    gap: 40px;
   }
   
   .headline{
@@ -908,7 +1010,7 @@ nav{
   #skills,
   #projects,
   #contact{
-    padding: 40px 20px;
+    padding: 60px 30px;
     margin: 10px;
   }
   
@@ -918,7 +1020,7 @@ nav{
   
   .contact-form{
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 20px;
   }
   
   .contact-form input,
@@ -926,11 +1028,32 @@ nav{
     grid-column: 1;
   }
   
+  .projects{
+    gap: 25px;
+  }
+  
+  .testimonials-grid{
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .testimonial{
+    padding: 25px;
+  }
+  
+  .experience-item{
+    padding: 30px 0;
+  }
+  
+  .experience-item::before{
+    left: -15px;
+  }
+  
   .site-footer{
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px;
   }
 }
 
