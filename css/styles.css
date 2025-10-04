@@ -369,11 +369,11 @@ nav{
   width: 280px;
   height: 280px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--panel), rgba(110,231,183,0.1));
-  padding: 20px;
+  object-fit: cover;
   border: 3px solid rgba(110,231,183,0.2);
   position: relative;
   z-index: 2;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .hero-art::before{
@@ -994,6 +994,7 @@ nav{
   .hero-art img{
     width: 200px;
     height: 200px;
+    object-fit: cover;
   }
   
   .hero-art::before{
