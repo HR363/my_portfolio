@@ -370,6 +370,7 @@ nav{
   height: 280px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 8%;
   border: 3px solid rgba(110,231,183,0.2);
   position: relative;
   z-index: 2;
@@ -995,6 +996,7 @@ nav{
     width: 200px;
     height: 200px;
     object-fit: cover;
+    object-position: center 10%;
   }
   
   .hero-art::before{
